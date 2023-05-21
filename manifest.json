@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "XPortal Hub test",
+  "description": "Test your xPortal Hub integration. Only for development purposes!!",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "XPortal Hub test"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": [ "http://*/*" ,"https://*/*" ],
+      "js": ["src/content-script.ts"],
+      "runAt": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "public/icon16.png",
+    "32": "public/icon32.png",
+    "96": "public/icon96.png",
+    "128": "public/icon128.png"
+  }
+}

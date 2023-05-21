@@ -1,0 +1,26 @@
+.cta {
+    border-radius: 4px;
+    padding: 10px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &-main {
+        background: aquamarine;
+        color: black;
+
+        &:hover {
+            background: rgba(127, 255, 212, 0.8);
+        }
+    }
+
+    &-warning {
+        background: red;
+        color: white;
+
+        &:hover {
+            background: rgba(255, 0, 0, 0.8);
+        }
+    }
+}
