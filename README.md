@@ -4,7 +4,7 @@ Chrome extension for **testing** XportalHub integration.
 
 If you are curious about how XportalHub integration works, you can have more informations in the [XportalHub integration](docs/XPortalHub-integration.md) doc.
 
-## Manuel installation
+## Installation
 
 Download the [latest release](https://github.com/stephaneLeroy/mx-xportalhub-chrome/releases/download/untagged-1b3c79907cc12ab1e292/mx-xportalhub-extension-1.0.0.zip) of the extension.
 Unzip the file.
