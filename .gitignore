@@ -14,6 +14,7 @@ dist-ssr
 coverage
 *.local
 mx-xportalhub-extension-*/**
+mx-xportalhub-extension-*.zip
 
 /cypress/videos/
 /cypress/screenshots/
