@@ -12,6 +12,7 @@
         <span class="cta cta-warning logout" @click="logout()">Logout</span>
       </div>
       <div class="login" @click="login()">
+        <token-configuration></token-configuration>
         <div class="cta cta-main">Login in the current tab</div>
       </div>
     </div>
@@ -23,6 +24,7 @@ import SignTransactions from "@/components/SignTransactions.vue";
 import {useWallet} from "@/WalletManager";
 import { onMounted, ref} from "vue";
 import ObfuscatedAddress from "@/components/ObfuscatedAddress.vue";
+import TokenConfiguration from "@/components/TokenConfiguration.vue";
 
 const { address, transactions, updateWallet, load, logout, generateNativeToken, transactionDetail } = useWallet();
 async function onWalletChange(wallet: string) {
@@ -39,10 +41,10 @@ async function login() {
     console.log("Tab", tabs)
     const [tab] = tabs;
     if(!tab?.url) return;
-    const separator = tab.url.includes("?") ? "&" : "?";
-    const url = `${tab.url}${separator}accessToken=${token}`;
-    console.log("Update url", url);
-    chrome.tabs.update(tab.id, { url });
+    const currentUrl = new URL(tab.url);
+    currentUrl.searchParams.set("accessToken", token);
+    console.log("currentUrl", currentUrl.toString());
+    chrome.tabs.update(tab.id, { url: currentUrl.toString() });
   });
 }
 
@@ -125,9 +127,11 @@ onMounted(() => {
 
 .login {
   display: flex;
+  flex-direction: column;
   margin-top: 40px;
   font-size: 1.5rem;
   height: 40%;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
