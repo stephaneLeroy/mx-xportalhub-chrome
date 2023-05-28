@@ -6,7 +6,7 @@ If you are curious about how XportalHub integration works, you can have more inf
 
 ## Installation
 
-Download the [latest release](https://github.com/stephaneLeroy/mx-xportalhub-chrome/releases/download/v1.0.0/mx-xportalhub-extension-1.0.0.zip) of the extension.
+Download the [latest release](https://github.com/stephaneLeroy/mx-xportalhub-chrome/releases/download/v1.1.0/mx-xportalhub-extension-1.1.0.zip) of the extension.
 Unzip the file.
 
 In Chrome, go to `chrome://extensions/` and enable `Developer mode` in the top right corner. You should see a new button `Load unpacked`. Click on it and select the folder `mx-xportalhub-extension-1.0.0`.
