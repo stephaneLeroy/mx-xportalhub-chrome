@@ -99,10 +99,6 @@ export const useWallet = () => {
             const signedTransactions = [];
             let error;
             for (const transaction of transactions) {
-                if (transaction.getChainID() === "0") {
-                    error = "For security reason we don't sign mainnet transactions.";
-                    break;
-                }
                 const serializedTransaction = transaction.serializeForSigning();
                 const transactionSignature = await signer.sign(serializedTransaction);
                 transaction.applySignature(new Signature(transactionSignature));
